@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b0b10;
+      --card:#0f0f14;
+      --muted:#bdbfc6;
+      --accent:#e75480;
+      --glass: rgba(255,255,255,0.03);
+      --glow: 0 8px 30px rgba(231,84,128,0.14);
+      --radius:16px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;background:linear-gradient(180deg,#06060a 0%, #0b0b10 60%);color:#eef0f5;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .wrap{max-width:1100px;margin:40px auto;padding:28px}
+
+    .nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:68px;height:68px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#9b5de5);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;box-shadow:var(--glow);
+    }
+    nav ul{display:flex;gap:16px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:10px;transition:all .25s}
+    nav a.active, nav a:hover{color:#fff;background:var(--glass);backdrop-filter: blur(6px)}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:28px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr;}.wrap{padding:12px}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:var(--radius);box-shadow:var(--glow);}
+
+    .about-head{display:flex;gap:18px;align-items:center}
+    .avatar{width:160px;height:160px;border-radius:20px;overflow:hidden;flex-shrink:0;background:linear-gradient(180deg,#111,#0b0b0b);border:2px solid rgba(255,255,255,0.04)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .title{font-size:22px;font-weight:700}
+    .sub{color:var(--muted);margin-top:6px}
+    .about-body{margin-top:18px;color:#dfe3ea}
+    .about-body p{margin:12px 0}
+
+    .skills{display:flex;flex-direction:column;gap:12px}
+    .skill{background:rgba(255,255,255,0.02);padding:12px;border-radius:12px}
+    .skill .meta{display:flex;justify-content:space-between;align-items:center}
+    .bar{height:12px;background:#0b0b10;border-radius:12px;margin-top:10px;overflow:hidden}
+    .bar > i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),#ff8fab);border-radius:12px}
+
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+    .cert{background:linear-gradient(180deg,#0e0e12,#0b0b10);padding:8px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .cert img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+
+    .side{position:sticky;top:36px}
+    .contact-card{padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px}
+    .contact-card h3{margin:0 0 8px}
+
+    form{display:grid;gap:12px}
+    input[type=text], input[type=email], textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit;outline:none}
+    input:focus, textarea:focus{border-color:rgba(231,84,128,0.7);box-shadow:0 8px 30px rgba(231,84,128,0.14);}
+    .btn{background:linear-gradient(90deg,var(--accent),#ff8fab);padding:12px;border-radius:12px;border:none;color:#fff;font-weight:700;cursor:pointer}
+    .small{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+    .glow-txt{background:linear-gradient(90deg,#fff,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .pulse{animation:pulse 2.6s infinite}
+    @keyframes pulse{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">AA</div>
+        <div>
+          <div class="title">Ashrakt Ahmed</div>
+          <div class="small muted">Early Childhood Education • Creative Web Portfolio</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about" class="active">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certs">Certificates</a></li>
+           
+        </ul>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <section>
+        <!-- ABOUT -->
+        <div id="about" class="card">
+          <div class="about-head">
+            <div class="avatar">
+              <img src="12.png" alt="Ashrakt Ahmed">
+            </div>
+            <div>
+              <div class="title">Ashrakt Ahmed</div>
+              <div class="sub">Early Childhood Education student • Creative designer • Front-end enthusiast</div>
+              <div style="margin-top:10px">
+                <span class="small muted">Location:</span> Mansoura, Egypt &nbsp;•&nbsp; <span class="small muted">Email:</span> <a class="muted" href="mailto:ashraktahmed442gmail.com">ashrakt@example.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-body">
+            <h3 class="glow-txt">About Me — A bold, generous introduction</h3>
+            <p>I am <strong>Ashrakt Ahmed</strong>, a passionate student of Early Childhood Education with a relentless curiosity for design, storytelling and building delightful digital experiences. My journey started in classrooms and children's workshops, where I learned that learning must be playful, intentional, and beautifully crafted. Over the years I combined that pedagogical mindset with web design — bringing educational ideas to life through clear layouts, subtle motion and friendly micro-interactions.</p>
+            <p>I love turning complex concepts into approachable, interactive pages: lesson prototypes, children's learning games, and polished portfolios. I enjoy working across the entire creation process — from rapid ideation and hand sketches, to pixel-perfect HTML/CSS and lightweight JavaScript. I aim for work that is warm, trustworthy and slightly unexpected — a balance between rigor and wonder.</p>
+            <p>Outside of development and design, I spend time reading child development research, practicing visual storytelling, and experimenting with sound effects that make small moments in a website feel alive. I value collaboration, iterative feedback, and a strong attention to detail. If you're looking for someone who brings compassion, craft and play to every project — that's me.</p>
+            <p><strong>Quick facts:</strong> Skilled at responsive layout, accessibility-first components, CSS animation, basic JavaScript logic, and creating educational interfaces for young learners. Fast learner, reliable communicator, and always excited to try new visual approaches.</p>
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div id="skills" class="card" style="margin-top:22px">
+          <h3>Skills & Strengths</h3>
+          <div class="skills" id="skills-list">
+            <div class="skill">
+              <div class="meta"><strong>HTML & Semantic Markup</strong><span class="muted">100%</span></div>
+              <div class="bar" data-value="95"><i></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><strong>CSS (Flex & Grid + Animations)</strong><span class="muted">95%</span></div>
+              <div class="bar" data-value="92"><i></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><strong>JavaScript (DOM, Forms)</strong><span class="muted">80%</span></div>
+              <div class="bar" data-value="86"><i></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><strong>chess game</strong><span class="muted">93%</span></div>
+              <div class="bar" data-value="93"><i></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><strong>communication skills</strong><span class="muted">90%</span></div>
+              <div class="bar" data-value="90"><i></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CERTIFICATES (Gallery) -->
+        <div id="certs" class="card" style="margin-top:22px">
+          <h3>Certificates</h3>
+          <div class="cert-grid" id="cert-grid">
+            <div class="cert"><img src="/1.jpg" alt="Certificate 1"></div>
+            <div class="cert"><img src="3.jpg" alt="Certificate 2"></div>
+            <div class="cert"><img src="4.jpg" alt=""></div>
+            <div class="cert"><img src="/5.jpg" alt="Certificate 4"></div>
+            <div class="cert"><img src="2.jpg" alt="Certificate 4"></div>
+            <div class="cert"><img src="/6.jpg" alt="Certificate 4"></div>
+            <div class="cert"><img src="/7.jpg" alt="Certificate 4"></div>
+            <div class="cert"><img src="/8.jpg" alt="Certificate 4"></div>
+                        <div class="cert"><img src="9.jpg" alt="Certificate 4"></div>       
+            <div class="cert"><img src="10.jpg" alt="Certificate 4"></div>
+            <div class="cert"><img src="13.jpg" alt="Certificate 4"></div>
+                   
+
+
+          </div>
+        </div>
+
+        <footer>© <span id="year"></span> Ashrakt Ahmed — Crafted with care</footer>
+      </section>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const bars = document.querySelectorAll('.bar');
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const bar = entry.target.querySelector('i');
+          const val = entry.target.getAttribute('data-value');
+          bar.style.transition = 'width 1.6s cubic-bezier(.2,.9,.2,1)';
+          bar.style.width = val + '%';
+          obs.unobserve(entry.target);
+        }
+      })
+    },{threshold:0.25});
+    bars.forEach(b=>obs.observe(b));
+  </script>
+
+ 
+</body>
+</html>
